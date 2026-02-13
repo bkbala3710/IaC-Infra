@@ -6,18 +6,18 @@ resource "aws_vpc" "myvpc" {
     Name = "${var.env}-vpc"
   }
 }
-
-resource "aws_subnet" "mysubnet" {
+  
+resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr
   availability_zone = var.subnet_az
 
   tags = {
-    Name = "${var.env}-subenet"
+    Name = "${var.env}-subnet"
   }
 }
 
 output "subnet_id" {
-    value           = aws_subnet.mysubnet.id
-    description     = "The subnet where my ec2 will be created"
+  value       = aws_subnet.main.id
+  description = "The Subnet which my EC2 will be created"
 }
