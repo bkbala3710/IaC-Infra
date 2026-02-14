@@ -1,3 +1,8 @@
+variable "env" {
+  type        = string
+  description = "What Env we are creating (dev, qa, production)"
+}
+
 variable "PuA" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
