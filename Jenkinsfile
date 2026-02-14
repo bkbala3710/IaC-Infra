@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/bkbala3710/103-infradeployment-pipeline.git'
+        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/bkbala3710/IaC-Infra.git'
       }
     }
 
