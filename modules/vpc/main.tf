@@ -3,21 +3,35 @@ resource "aws_vpc" "myvpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "${var.env}-vpc"
+    Name = "${var.env}-VPC"
   }
 }
-
-resource "aws_subnet" "mysubnet" {
+  
+resource "aws_subnet" "PuA" {
   vpc_id            = aws_vpc.myvpc.id
-  cidr_block        = var.subnet_cidr
-  availability_zone = var.subnet_az
+  cidr_block        = var.subnet_cidr_PuA
+  availability_zone = var.subnet_az_PuA
 
   tags = {
-    Name = "${var.env}-subenet"
+    Name = "${var.PuA}-SUBNET"
   }
 }
 
-output "subnet_id" {
-    value           = aws_subnet.mysubnet.id
-    description     = "The subnet where my ec2 will be created"
+resource "aws_subnet" "PuB" {
+  vpc_id            = aws_vpc.myvpc.id
+  cidr_block        = var.subnet_cidr_PuB
+  availability_zone = var.subnet_az_PuB
+
+  tags = {
+    Name = "${var.PuB}-SUBNET"
+  }
+}
+
+output "subnet_id-PuA" {
+  value       = aws_subnet.PuA.id
+  description = "The Subnet which my EC2 will be created"
+}
+output "subnet_id_PuB" {
+  value       = aws_subnet.PuB.id
+  description = "The Subnet which my EC2 will be created"
 }
