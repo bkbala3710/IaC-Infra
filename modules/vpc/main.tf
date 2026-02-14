@@ -7,35 +7,31 @@ resource "aws_vpc" "myvpc" {
   }
 }
   
-resource "aws_subnet" "main" {
+resource "aws_subnet" "PuA" {
   vpc_id            = aws_vpc.myvpc.id
-  cidr_block        = var.subnet_cidr
-  availability_zone = var.subnet_az
+  cidr_block        = var.subnet_cidr_PuA
+  availability_zone = var.subnet_az_a
 
   tags = {
-    Name = "${var.sub}-SUBNET"
+    Name = "${var.PuA}-SUBNET"
   }
 }
 
----
-resource "aws_subnet" "public" {
-  count = 2
-
-  vpc_id            = var.vpc_id
-  availability_zone = var.azs[count.index]
-
-  # Convert /16 → /24
-  cidr_block = cidrsubnet(var.vpc_cidr, 8, count.index + 1)
-
-  map_public_ip_on_launch = true
+resource "aws_subnet" "PuB" {
+  vpc_id            = aws_vpc.myvpc.id
+  cidr_block        = var.subnet_cidr_PuB
+  availability_zone = var.subnet_az_b
 
   tags = {
-    Name = "public-subnet-${count.index + 1}"
+    Name = "${var.PuB}-SUBNET"
   }
 }
----
 
-output "subnet_id" {
-  value       = aws_subnet.main.id
+output "subnet_id-PuA" {
+  value       = aws_subnet.PuA.id
+  description = "The Subnet which my EC2 will be created"
+}
+output "subnet_id_PuB" {
+  value       = aws_subnet.PuB.id
   description = "The Subnet which my EC2 will be created"
 }
