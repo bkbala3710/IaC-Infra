@@ -13,7 +13,7 @@ resource "aws_subnet" "main" {
   availability_zone = var.subnet_az
 
   tags = {
-    Name = "${var.env}-subnet"
+    Name = "${var.sub}-SUBNET"
   }
 }
 
