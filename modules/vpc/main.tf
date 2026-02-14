@@ -1,4 +1,4 @@
-resource "aws_vpc" "myvpc" {
+resource "aws_vpc" "myvpc_4" {
   cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
 
@@ -7,7 +7,7 @@ resource "aws_vpc" "myvpc" {
   }
 }
   
-resource "aws_subnet" "PuA" {
+resource "aws_subnet" "PuA_4" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr_PuA
   availability_zone = var.subnet_az_PuA
@@ -17,7 +17,7 @@ resource "aws_subnet" "PuA" {
   }
 }
 
-resource "aws_subnet" "PuB" {
+resource "aws_subnet" "PuB_4" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr_PuB
   availability_zone = var.subnet_az_PuB
@@ -28,10 +28,10 @@ resource "aws_subnet" "PuB" {
 }
 
 output "subnet_id-PuA" {
-  value       = aws_subnet.PuA.id
+  value       = aws_subnet.PuA_4.id
   description = "The Subnet which my EC2 will be created"
 }
 output "subnet_id_PuB" {
-  value       = aws_subnet.PuB.id
+  value       = aws_subnet.PuB_4.id
   description = "The Subnet which my EC2 will be created"
 }
