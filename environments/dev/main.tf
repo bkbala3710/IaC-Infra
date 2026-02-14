@@ -7,8 +7,8 @@ module "vpc" {
   subnet_az_PuA     = "${var.aws_region}a"          # ap-southeast-1a
   subnet_az_PuB     = "${var.aws_region}b"          # ap-southeast-1b
   env           = "UW2"
-  PuA           = "UW2-PUBLIC-1"
-  PuB           = "UW2-PUBLIC-2"
+  PuA_1           = "UW2-PUBLIC-1"
+  PuB_1           = "UW2-PUBLIC-2"
 }
 
 /*
