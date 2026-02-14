@@ -1,39 +1,39 @@
-variable "vpc_cidr_4" {
+variable "vpc_cidr" {
   type        = string
   description = "VPC CIDR"
 }
 
-variable "subnet_cidr_PuA_4" {
+variable "subnet_cidr_PuA" {
   type        = string
   description = "SUBNET CIDR"
 }
 
-variable "subnet_cidr_PuB_4" {
+variable "subnet_cidr_PuB" {
   type        = string
   description = "SUBNET CIDR"
 }
 
-variable "subnet_az_PuA_4" {
+variable "subnet_az_PuA" {
   type        = string
   description = "AZ of the Subnet"
 }
 
-variable "subnet_az_PuB_4" {
+variable "subnet_az_PuB" {
   type        = string
   description = "AZ of the Subnet"
 }
 
-variable "env_4" {
+variable "env" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
 }
 
-variable "PuA_4" {
+variable "PuA" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
 }
 
-variable "PuB_4" {
+variable "PuB" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
 }
