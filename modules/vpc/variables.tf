@@ -23,3 +23,18 @@ variable "subnet_az" {
   type        = string
   description = "AZ of the Subnet"
 }
+
+
+---
+variable "vpc_id" {
+  type = string
+}
+
+variable "vpc_cidr" {
+  type = string
+}
+
+variable "azs" {
+  type = list(string)
+}
+---
