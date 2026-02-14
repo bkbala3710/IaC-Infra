@@ -10,7 +10,7 @@ resource "aws_vpc" "myvpc" {
 resource "aws_subnet" "PuA" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr_PuA
-  availability_zone = var.subnet_az_a
+  availability_zone = var.subnet_az_PuA
 
   tags = {
     Name = "${var.PuA}-SUBNET"
@@ -20,7 +20,7 @@ resource "aws_subnet" "PuA" {
 resource "aws_subnet" "PuB" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr_PuB
-  availability_zone = var.subnet_az_b
+  availability_zone = var.subnet_az_PuB
 
   tags = {
     Name = "${var.PuB}-SUBNET"
