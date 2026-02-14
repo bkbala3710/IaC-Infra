@@ -8,7 +8,7 @@ resource "aws_vpc" "myvpc" {
 }
   
 resource "aws_subnet" "PuA" {
-  vpc_id            = aws_vpc.myvpc_1.id
+  vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr_PuA
   availability_zone = var.subnet_az_PuA
 
