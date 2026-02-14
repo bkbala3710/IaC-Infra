@@ -1,33 +1,3 @@
-Skip to content
-bkbala3710
-IaC-Infra
-Repository navigation
-Code
-Issues
-Pull requests
-Agents
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-IaC-Infra/modules/vpc
-/variables.tf
-Go to file
-t
-bkbala3710
-bkbala3710
-Update variables.tf
-6e77544
- · 
-now
-IaC-Infra/modules/vpc
-/variables.tf
-
-Code
-
-Blame
 variable "env" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
@@ -67,4 +37,3 @@ variable "subnet_az_PuB" {
   type        = string
   description = "AZ of the Subnet"
 }
- 
