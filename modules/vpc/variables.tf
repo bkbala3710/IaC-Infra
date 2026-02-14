@@ -4,6 +4,11 @@ variable "env" {
   description = "What Env we are creating (dev, qa, production)"
 }
 
+variable "sub" {
+  type        = string
+  description = "What Env we are creating (dev, qa, production)"
+}
+
 variable "vpc_cidr" {
   type        = string
   description = "VPC CIDR"
