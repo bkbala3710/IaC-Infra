@@ -28,12 +28,12 @@ variable "env" {
   description = "What Env we are creating (dev, qa, production)"
 }
 
-variable "PuA_1" {
+variable "PuA" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
 }
 
-variable "PuB_1" {
+variable "PuB" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
 }
