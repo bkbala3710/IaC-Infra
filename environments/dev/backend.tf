@@ -6,10 +6,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "12112025"
+    bucket = "103-jenkins-terraform"
     key    = "environments/dev/terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "12112025dy" 
+    dynamodb_table = "103-jenkins-terraform" 
   }
 }
 
