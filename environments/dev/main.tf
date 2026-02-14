@@ -5,6 +5,7 @@ module "vpc" {
   subnet_cidr   = "10.0.1.0/24"
   subnet_az     = "${var.aws_region}a"          # ap-southeast-1a
   env           = "UW2"
+  sub           = "PUBLIC-1"
 }
 
 /*
