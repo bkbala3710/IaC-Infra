@@ -32,6 +32,6 @@ output "subnet_id-PuA" {
   description = "The Subnet which my EC2 will be created"
 }
 output "subnet_id_PuB" {
-  value       = aws_subnet.PuB_4.id
+  value       = aws_subnet.PuB_1.id
   description = "The Subnet which my EC2 will be created"
 }
