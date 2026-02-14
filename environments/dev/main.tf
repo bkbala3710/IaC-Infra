@@ -7,7 +7,7 @@ module "vpc" {
   env           = "dev"
 }
 
-
+/*
 module "ec2" {
   source            = "../../modules/ec2"
   ami_id            = "ami-0afc7fe9be84307e4"
@@ -16,4 +16,4 @@ module "ec2" {
   ec2_count         = 2
   env               = "dev"
 }
-
+*/
