@@ -1,12 +1,17 @@
+
 module "vpc" {
   source        = "../../modules/vpc"
   vpc_cidr      = "10.0.0.0/16"
-  subnet_cidr   = "10.0.1.0/24"
-  subnet_az     = "${var.aws_region}a"          # ap-southeast-1a
-  env           = "dev"
+  subnet_cidr_PuA   = "10.0.1.0/24"
+  subnet_cidr_PuB   = "10.0.2.0/24"
+  subnet_az_PuA     = "${var.aws_region}a"          # ap-southeast-1a
+  subnet_az_PuB     = "${var.aws_region}b"          # ap-southeast-1b
+  env           = "UW3"
+  PuA           = "UW3-PUBLIC-1"
+  PuB           = "UW3-PUBLIC-2"
 }
 
-
+/*
 module "ec2" {
   source            = "../../modules/ec2"
   ami_id            = "ami-0afc7fe9be84307e4"
@@ -15,3 +20,4 @@ module "ec2" {
   ec2_count         = 2
   env               = "dev"
 }
+*/
