@@ -32,8 +32,8 @@ module "routing" {
   source        = "../../modules/routing"
   vpc_id = module.vpc.vpc_id
   env           = "UW2"
-  subnet_id-PuA = module.vpc.subnet_id-PuA
-  subnet_id-PuB = module.vpc.subnet_id-PuB
+  subnet_id_PuA = module.vpc.subnet_id_PuA
+  subnet_id_PuB = module.vpc.subnet_id_PuB
 }
 
 /*
