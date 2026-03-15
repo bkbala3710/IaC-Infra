@@ -87,7 +87,7 @@ resource "aws_subnet" "PrF" {
   }
 }
 ########################################################
-output "subnet_id-PuA" {
+output "subnet_id_PuA" {
   value       = aws_subnet.PuA.id
   description = "The Subnet which my EC2 will be created"
 }
@@ -96,7 +96,7 @@ output "subnet_id_PuB" {
   description = "The Subnet which my EC2 will be created"
 }
 
-output "subnet_id-PrA" {
+output "subnet_id_PrA" {
   value       = aws_subnet.PrA.id
   description = "The Subnet which my EC2 will be created"
 }
@@ -105,7 +105,7 @@ output "subnet_id_PrB" {
   description = "The Subnet which my EC2 will be created"
 }
 
-output "subnet_id-PrC" {
+output "subnet_id_PrC" {
   value       = aws_subnet.PrC.id
   description = "The Subnet which my EC2 will be created"
 }
@@ -114,7 +114,7 @@ output "subnet_id_PrD" {
   description = "The Subnet which my EC2 will be created"
 }
 
-output "subnet_id-PrE" {
+output "subnet_id_PrE" {
   value       = aws_subnet.PrE.id
   description = "The Subnet which my EC2 will be created"
 }
