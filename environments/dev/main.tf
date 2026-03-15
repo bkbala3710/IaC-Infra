@@ -17,21 +17,21 @@ module "vpc" {
   subnet_az_PrD     = "${var.aws_region}b"          # ap-southeast-1b
   subnet_az_PrE     = "${var.aws_region}a"          # ap-southeast-1a
   subnet_az_PrF     = "${var.aws_region}b"          # ap-southeast-1b
-  env           = "UW2"
-  PuA           = "UW2-PUBLIC-1"
-  PuB           = "UW2-PUBLIC-2"
-  PrA           = "UW2-PRIVATE-1"
-  PrB           = "UW2-PRIVATE-2"
-  PrC           = "UW2-PRIVATE-3"
-  PrD           = "UW2-PRIVATE-4"
-  PrE           = "UW2-PRIVATE-5"
-  PrF           = "UW2-PRIVATE-6"
+  env           = "dev"
+  PuA           = "dev-PUBLIC-1"
+  PuB           = "dev-PUBLIC-2"
+  PrA           = "dev-PRIVATE-1"
+  PrB           = "dev-PRIVATE-2"
+  PrC           = "dev-PRIVATE-3"
+  PrD           = "dev-PRIVATE-4"
+  PrE           = "dev-PRIVATE-5"
+  PrF           = "dev-PRIVATE-6"
 }
 
 module "routing" {
   source        = "../../modules/routing"
   vpc_id = module.vpc.vpc_id
-  env           = "UW2"
+  env           = "dev"
   subnet_id_PuA = module.vpc.subnet_id_PuA
   subnet_id_PuB = module.vpc.subnet_id_PuB
   subnet_id_PrA = module.vpc.subnet_id_PrA
