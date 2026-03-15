@@ -6,7 +6,7 @@ resource "aws_vpc" "myvpc" {
     Name = "${var.env}-VPC"
   }
 }
-  
+########################################################  
 resource "aws_subnet" "PuA" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr_PuA
@@ -47,6 +47,46 @@ resource "aws_subnet" "PrB" {
   }
 }
 
+resource "aws_subnet" "PrC" {
+  vpc_id            = aws_vpc.myvpc.id
+  cidr_block        = var.subnet_cidr_PrC
+  availability_zone = var.subnet_az_PrC
+
+  tags = {
+    Name = "${var.PrC}-SUBNET"
+  }
+}
+
+resource "aws_subnet" "PrD" {
+  vpc_id            = aws_vpc.myvpc.id
+  cidr_block        = var.subnet_cidr_PrD
+  availability_zone = var.subnet_az_PrD
+
+  tags = {
+    Name = "${var.PrD}-SUBNET"
+  }
+}
+
+resource "aws_subnet" "PrE" {
+  vpc_id            = aws_vpc.myvpc.id
+  cidr_block        = var.subnet_cidr_PrE
+  availability_zone = var.subnet_az_PrE
+
+  tags = {
+    Name = "${var.PrE}-SUBNET"
+  }
+}
+
+resource "aws_subnet" "PrF" {
+  vpc_id            = aws_vpc.myvpc.id
+  cidr_block        = var.subnet_cidr_PrF
+  availability_zone = var.subnet_az_PrF
+
+  tags = {
+    Name = "${var.PrF}-SUBNET"
+  }
+}
+########################################################
 output "subnet_id-PuA" {
   value       = aws_subnet.PuA.id
   description = "The Subnet which my EC2 will be created"
@@ -62,5 +102,23 @@ output "subnet_id-PrA" {
 }
 output "subnet_id_PrB" {
   value       = aws_subnet.PrB.id
+  description = "The Subnet which my EC2 will be created"
+}
+
+output "subnet_id-PrC" {
+  value       = aws_subnet.PrC.id
+  description = "The Subnet which my EC2 will be created"
+}
+output "subnet_id_PrD" {
+  value       = aws_subnet.PrD.id
+  description = "The Subnet which my EC2 will be created"
+}
+
+output "subnet_id-PrE" {
+  value       = aws_subnet.PrE.id
+  description = "The Subnet which my EC2 will be created"
+}
+output "subnet_id_PrF" {
+  value       = aws_subnet.PrF.id
   description = "The Subnet which my EC2 will be created"
 }
