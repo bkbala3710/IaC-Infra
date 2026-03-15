@@ -20,4 +20,13 @@ resource "aws_route" "public_internet" {
   gateway_id             = aws_internet_gateway.igw.id
 }
 #####################################################
+resource "aws_route_table_association" "public_subnet_1" {
+  subnet_id      = var.subnet_id-PuA
+  route_table_id = aws_route_table.public_rt.id
+}
+
+resource "aws_route_table_association" "public_subnet_2" {
+  subnet_id      = var.subnet_id-PuB
+  route_table_id = aws_route_table.public_rt.id
+}
 
