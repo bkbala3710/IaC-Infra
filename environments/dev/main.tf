@@ -34,6 +34,12 @@ module "routing" {
   env           = "UW2"
   subnet_id_PuA = module.vpc.subnet_id_PuA
   subnet_id_PuB = module.vpc.subnet_id_PuB
+  subnet_id_PrA = module.vpc.subnet_id_PrA
+  subnet_id_PrB = module.vpc.subnet_id_PrB
+  subnet_id_PrC = module.vpc.subnet_id_PrC
+  subnet_id_PrD = module.vpc.subnet_id_PrD
+  subnet_id_PrE = module.vpc.subnet_id_PrE
+  subnet_id_PrF = module.vpc.subnet_id_PrF
 }
 
 /*
