@@ -68,7 +68,24 @@ variable "PrB" {
   description = "What Env we are creating (dev, qa, production)"
 }
 
+variable "PrC" {
+  type        = string
+  description = "What Env we are creating (dev, qa, production)"
+}
 
+variable "PrD" {
+  type        = string
+  description = "What Env we are creating (dev, qa, production)"
+}
 
+variable "PrE" {
+  type        = string
+  description = "What Env we are creating (dev, qa, production)"
+}
+
+variable "PrF" {
+  type        = string
+  description = "What Env we are creating (dev, qa, production)"
+}
 
 
