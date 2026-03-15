@@ -7,10 +7,10 @@ variable "env" {
   description = "What Env we are creating (dev, qa, production)"
 }
 
-variable "subnet_id-PuA" {
+variable "subnet_id_PuA" {
   type = string
 }
 
-variable "subnet_id-PuB" {
+variable "subnet_id_PuB" {
   type = string
 }
