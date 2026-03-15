@@ -122,3 +122,7 @@ output "subnet_id_PrF" {
   value       = aws_subnet.PrF.id
   description = "The Subnet which my EC2 will be created"
 }
+
+output "vpc_id" {
+  value = aws_vpc.myvpc.id
+}
