@@ -9,6 +9,8 @@ module "vpc" {
   env           = "UW2"
   PuA           = "UW2-PUBLIC-1"
   PuB           = "UW2-PUBLIC-2"
+  PrA           = "UW2-PRIVATE-1"
+  PrB           = "UW2-PRIVATE-2"
 }
 
 /*
