@@ -1,3 +1,4 @@
+################# IGW #######################
 resource "aws_internet_gateway" "igw" {
   vpc_id = var.vpc_id
 
@@ -5,7 +6,7 @@ resource "aws_internet_gateway" "igw" {
     Name = "${var.env}-igw"
   }
 }
-#####################################################
+################# public route table  #######################
 resource "aws_route_table" "public_rt" {
   vpc_id = var.vpc_id
 
@@ -13,13 +14,14 @@ resource "aws_route_table" "public_rt" {
     Name = "${var.env}-public-rt"
   }
 }
-#####################################################
+################# public route table map to IGW #######################
 resource "aws_route" "public_internet" {
   route_table_id         = aws_route_table.public_rt.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.igw.id
 }
-#####################################################
+
+################ Subnets map to public route table ####################
 resource "aws_route_table_association" "public_subnet_1" {
   subnet_id      = var.subnet_id_PuA
   route_table_id = aws_route_table.public_rt.id
@@ -30,7 +32,7 @@ resource "aws_route_table_association" "public_subnet_2" {
   route_table_id = aws_route_table.public_rt.id
 }
 
-#############################################################################################
+################## 2 elastic ip for 2 NAT Gateway for 2az ##################################
 resource "aws_eip" "nat_eip_az1" {
   
 
@@ -46,7 +48,7 @@ resource "aws_eip" "nat_eip_az2" {
     Name = "${var.env}-nat-eip-az2"
   }
 }
-########################################################
+############### Map eip to NAT gatway with respective public az subnet #######################
 resource "aws_nat_gateway" "nat_az1" {
   allocation_id = aws_eip.nat_eip_az1.id
   subnet_id     = var.subnet_id_PuA
@@ -63,7 +65,7 @@ resource "aws_nat_gateway" "nat_az2" {
     Name = "${var.env}-nat-az2"
   }
 }
-#############Private route table############################
+############# Private route table ############################
 resource "aws_route_table" "private_rt_az1" {
   vpc_id = var.vpc_id
 
@@ -79,7 +81,7 @@ resource "aws_route_table" "private_rt_az2" {
     Name = "${var.env}-private-rt-az2"
   }
 }
-#################route to NAT##################################
+################# Map private route table to NAT##################################
 resource "aws_route" "nat_route_az1" {
   route_table_id         = aws_route_table.private_rt_az1.id
   destination_cidr_block = "0.0.0.0/0"
@@ -91,7 +93,7 @@ resource "aws_route" "nat_route_az2" {
   destination_cidr_block = "0.0.0.0/0"
   nat_gateway_id         = aws_nat_gateway.nat_az2.id
 }
-##################associate private subnets##########################
+################## Subnets map to private route table##########################
 resource "aws_route_table_association" "private_subnet_1" {
   subnet_id      = var.subnet_id_PrA
   route_table_id = aws_route_table.private_rt_az1.id
