@@ -32,7 +32,7 @@ resource "aws_route_table_association" "public_subnet_2" {
 
 #############################################################################################
 resource "aws_eip" "nat_eip_az1" {
-  domain = "vpc"
+  
 
   tags = {
     Name = "${var.env}-nat-eip-az1"
@@ -40,7 +40,7 @@ resource "aws_eip" "nat_eip_az1" {
 }
 
 resource "aws_eip" "nat_eip_az2" {
-  domain = "vpc"
+  
 
   tags = {
     Name = "${var.env}-nat-eip-az2"
