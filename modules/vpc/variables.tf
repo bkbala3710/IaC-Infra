@@ -41,7 +41,7 @@ variable "subnet_cidr_PrF" {
   type        = string
   description = "SUBNET CIDR"
 }
-############### Subnet az mapping ################
+############### Subnet az mapping 2 public & 6 private ################
 variable "subnet_az_PuA" {
   type        = string
   description = "AZ of the Subnet"
@@ -84,7 +84,7 @@ variable "env" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
 }
-#####################################################
+################# tag mapping ####################################
 variable "PuA" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
