@@ -46,7 +46,7 @@ pipeline {
     stage('Terraform Apply') {
       steps {
         dir("${TF_WORKDIR}") {
-          sh 'terraform destroy -auto-approve'
+          sh 'terraform apply -tfplan'
         }
       }
     }
