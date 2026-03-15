@@ -13,12 +13,32 @@ variable "subnet_cidr_PuB" {
   description = "SUBNET CIDR"
 }
 
+variable "subnet_cidr_PrA" {
+  type        = string
+  description = "SUBNET CIDR"
+}
+
+variable "subnet_cidr_PrB" {
+  type        = string
+  description = "SUBNET CIDR"
+}
+
 variable "subnet_az_PuA" {
   type        = string
   description = "AZ of the Subnet"
 }
 
 variable "subnet_az_PuB" {
+  type        = string
+  description = "AZ of the Subnet"
+}
+
+variable "subnet_az_PrA" {
+  type        = string
+  description = "AZ of the Subnet"
+}
+
+variable "subnet_az_PrB" {
   type        = string
   description = "AZ of the Subnet"
 }
