@@ -1,8 +1,9 @@
+############### VPC CIDR ################
 variable "vpc_cidr" {
   type        = string
   description = "VPC CIDR"
 }
-#####################################################
+############### Subnets 2 public & 6 private CIDR ################
 variable "subnet_cidr_PuA" {
   type        = string
   description = "SUBNET CIDR"
@@ -40,7 +41,7 @@ variable "subnet_cidr_PrF" {
   type        = string
   description = "SUBNET CIDR"
 }
-#####################################################
+############### Subnet az mapping ################
 variable "subnet_az_PuA" {
   type        = string
   description = "AZ of the Subnet"
