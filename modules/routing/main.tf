@@ -21,12 +21,12 @@ resource "aws_route" "public_internet" {
 }
 #####################################################
 resource "aws_route_table_association" "public_subnet_1" {
-  subnet_id      = var.subnet_id-PuA
+  subnet_id      = var.subnet_id_PuA
   route_table_id = aws_route_table.public_rt.id
 }
 
 resource "aws_route_table_association" "public_subnet_2" {
-  subnet_id      = var.subnet_id-PuB
+  subnet_id      = var.subnet_id_PuB
   route_table_id = aws_route_table.public_rt.id
 }
 
