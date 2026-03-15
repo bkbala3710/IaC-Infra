@@ -31,6 +31,7 @@ module "vpc" {
 module "routing" {
   source        = "../../modules/routing"
   vpc_id = module.vpc.vpc_id
+  env           = "UW2"
 }
 
 /*
