@@ -1,3 +1,4 @@
+############### VPC #########################################  
 resource "aws_vpc" "myvpc" {
   cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
@@ -6,7 +7,7 @@ resource "aws_vpc" "myvpc" {
     Name = "${var.env}-VPC"
   }
 }
-########################################################  
+############### Subnets 2 public & 6 private ################
 resource "aws_subnet" "PuA" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr_PuA
@@ -86,7 +87,7 @@ resource "aws_subnet" "PrF" {
     Name = "${var.PrF}-SUBNET"
   }
 }
-########################################################
+############### Subnets 2 public & 6 private output ################
 output "subnet_id_PuA" {
   value       = aws_subnet.PuA.id
   description = "The Subnet which my EC2 will be created"
