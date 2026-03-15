@@ -1,4 +1,3 @@
-
 module "vpc" {
   source        = "../../modules/vpc"
   vpc_cidr      = "10.0.0.0/16"
@@ -27,6 +26,10 @@ module "vpc" {
   PrD           = "UW2-PRIVATE-4"
   PrE           = "UW2-PRIVATE-5"
   PrF           = "UW2-PRIVATE-6"
+}
+
+module "routing" {
+  source        = "../../modules/routing"
 }
 
 /*
