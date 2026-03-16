@@ -5,3 +5,7 @@ variable "env" {
   type        = string
   description = "What Env we are creating (dev, qa, production)"
 }
+
+variable "vpc_id" {
+  type = string
+}
