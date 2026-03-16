@@ -52,6 +52,7 @@ module "alb_asg" {
   source        = "../../modules/alb_asg"
   presentation_ec2_sg = module.securitygrps.presentation_ec2_sg_id
   env           = "dev"
+  vpc_id = module.vpc.vpc_id
 }
 
 /*
