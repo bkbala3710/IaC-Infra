@@ -50,7 +50,8 @@ module "securitygrps" {
 
 module "alb_asg" {
   source        = "../../modules/alb_asg"
-  presentation_ec2_sg = module.securitygrps.presentation_ec2_sg_id
+  presentation_ec2_sg_id = module.securitygrps.presentation_ec2_sg_id
+  alb_sg_id = module.securitygrps.alb_sg_id
   env           = "dev"
   vpc_id = module.vpc.vpc_id
 }
