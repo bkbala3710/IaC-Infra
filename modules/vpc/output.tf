@@ -39,7 +39,7 @@ output "vpc_id" {
   value = aws_vpc.myvpc.id
 }
 
-output "public_subnet_ids" {
+output "private_subnet_ids" {
   value = [
     aws_subnet.PrA.id,
     aws_subnet.PrB.id
