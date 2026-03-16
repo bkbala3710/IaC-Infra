@@ -3,7 +3,7 @@ resource "aws_launch_template" "web_template" {
   image_id      = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
 
-  vpc_security_group_ids = [aws_security_group.presentation_ec2_sg.id]
+  vpc_security_group_ids = [aws_security_group.presentation_ec2_sg_id.id]
 
   user_data = base64encode(<<EOF
 #!/bin/bash
