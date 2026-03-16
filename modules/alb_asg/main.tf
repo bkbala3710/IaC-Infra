@@ -54,7 +54,7 @@ resource "aws_autoscaling_group" "asg" {
   desired_capacity    = 2
   max_size            = 4
   min_size            = 2
-  vpc_zone_identifier = var.public_subnets
+  vpc_zone_identifier = module.vpc.privateAB_subnet_ids
 
   launch_template {
     id      = aws_launch_template.web_template.id
