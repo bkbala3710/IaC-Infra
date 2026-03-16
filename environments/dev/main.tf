@@ -42,6 +42,12 @@ module "routing" {
   subnet_id_PrF = module.vpc.subnet_id_PrF
 }
 
+module "securitygrps" {
+  source        = "../../modules/securitygrps"
+  vpc_id = module.vpc.vpc_id
+  env           = "dev"
+}
+
 /*
 module "ec2" {
   source            = "../../modules/ec2"
