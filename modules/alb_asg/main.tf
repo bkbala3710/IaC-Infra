@@ -31,7 +31,7 @@ resource "aws_lb_target_group" "tg" {
 resource "aws_lb" "alb" {
   name               = "web-alb"
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.alb_sg.id]
+  security_groups    = var.alb_sg_id
   subnets            = var.public_subnets
 
   tags = {
