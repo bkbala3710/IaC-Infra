@@ -14,3 +14,58 @@ echo "Welcome from ASG instance" > /var/www/html/index.html
 EOF
   )
 }
+
+##################### Target group ################
+resource "aws_lb_target_group" "tg" {
+  name     = "web-tg"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = var.vpc_id
+
+  health_check {
+    path = "/"
+    port = "80"
+  }
+}
+##################### alb ################
+resource "aws_lb" "alb" {
+  name               = "web-alb"
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.alb_sg.id]
+  subnets            = var.public_subnets
+
+  tags = {
+    Name = "web-alb"
+  }
+}
+##################### listener ################
+resource "aws_lb_listener" "listener" {
+  load_balancer_arn = aws_lb.alb.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.tg.arn
+  }
+}
+##################### ASG ################
+resource "aws_autoscaling_group" "asg" {
+  desired_capacity    = 2
+  max_size            = 4
+  min_size            = 2
+  vpc_zone_identifier = var.public_subnets
+
+  launch_template {
+    id      = aws_launch_template.web_template.id
+    version = "$Latest"
+  }
+
+  target_group_arns = [aws_lb_target_group.tg.arn]
+
+  tag {
+    key                 = "Name"
+    value               = "ASG-Instance"
+    propagate_at_launch = true
+  }
+}
