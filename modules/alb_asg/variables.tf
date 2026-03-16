@@ -1,4 +1,4 @@
-variable "presentation_ec2_sg" {
+variable "presentation_ec2_sg_id" {
   type = string
 }
 variable "env" {
