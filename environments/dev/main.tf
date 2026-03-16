@@ -48,6 +48,12 @@ module "securitygrps" {
   env           = "dev"
 }
 
+module "alb_asg" {
+  source        = "../../modules/alb_asg"
+  presentation_ec2_sg = module.securitygrps.presentation_ec2_sg
+  env           = "dev"
+}
+
 /*
 module "ec2" {
   source            = "../../modules/ec2"
