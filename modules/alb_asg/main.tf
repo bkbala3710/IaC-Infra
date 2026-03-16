@@ -32,7 +32,7 @@ resource "aws_lb" "alb" {
   name               = "web-alb"
   load_balancer_type = "application"
   security_groups    = var.alb_sg_id
-  subnets            = module.vpc.private_subnet_ids
+  subnets            = module.vpc.privateAB_subnet_ids
 
   tags = {
     Name = "web-alb"
