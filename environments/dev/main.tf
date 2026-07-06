@@ -27,7 +27,7 @@ module "vpc" {
   PrE           = "dev-PRIVATE-5"
   PrF           = "dev-PRIVATE-6"
 }
-
+/*
 module "routing" {
   source        = "../../modules/routing"
   vpc_id = module.vpc.vpc_id
@@ -56,6 +56,7 @@ module "alb_asg" {
   vpc_id = module.vpc.vpc_id
 }
 
+*/
 /*
 module "ec2" {
   source            = "../../modules/ec2"
